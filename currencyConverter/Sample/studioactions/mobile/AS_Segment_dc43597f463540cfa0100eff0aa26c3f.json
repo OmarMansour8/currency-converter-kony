@@ -1,0 +1,29 @@
+{
+    "AS_Segment_dc43597f463540cfa0100eff0aa26c3f": {
+        "id": "AS_Segment_dc43597f463540cfa0100eff0aa26c3f",
+        "type": "ACTION_SEQUENCE",
+        "params": [{
+            "datatype": "collection",
+            "name": "eventobject"
+        }, {
+            "datatype": "string",
+            "name": "x"
+        }, {
+            "datatype": "string",
+            "name": "y"
+        }],
+        "contextObj": {
+            "name": "Home",
+            "type": "forms",
+            "platform": "",
+            "KUID": "fb6e88e7d7c94c68aa13478d43b174b5"
+        },
+        "language": "js",
+        "actions": [{
+            "id": "ADD_SNIPPET_ica79cd4780e4e0fa4a056d67c3dac8e",
+            "type": "ADD_SNIPPET",
+            "codeSnippet": "var currName = this.view.selectCurrencySeg.data[this.view.selectCurrencySeg.currentIndex[1]].imgCurr.slice(0,3).toUpperCase();\nconsole.log(currName);\n",
+            "parentId": null
+        }]
+    }
+}

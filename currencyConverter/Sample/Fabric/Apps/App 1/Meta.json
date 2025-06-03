@@ -1,0 +1,15 @@
+{
+  "subType" : "customapp",
+  "description" : "This is an app of type [mbaasapp]",
+  "version" : "1.0",
+  "intSvcs" : [ {
+    "name" : "jarPublish",
+    "version" : "1.0",
+    "etag" : "f066b4a6-e071-4d1d-a666-24d623a02b92"
+  }, {
+    "name" : "product",
+    "version" : "1.0",
+    "etag" : "23dc8567-790f-4f4c-b2fc-f58fd36dc46b"
+  } ],
+  "identitySvcConf" : "{\"session_idle_timeout_mins\":20,\"session_max_duration_mins\":360,\"show_security_attributes\":false,\"is_integrity_enabled\":false,\"auto_extend\":true}"
+}

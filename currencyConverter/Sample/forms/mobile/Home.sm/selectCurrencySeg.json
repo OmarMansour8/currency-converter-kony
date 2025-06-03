@@ -1,0 +1,161 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "_bottom_": {
+        "type": "string",
+        "value": "35%"
+    },
+    "_data_": [
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "usd.png"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "egp.png"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "jpy.png"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "cad.png"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "chf.png"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "kwd.png"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "50%"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "android": {
+        "viewType": "pageview"
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "counter": "05",
+    "enablehapticfeedback": false,
+    "focusedindex": 0,
+    "focuseditem": {
+        "imgCurr": {
+            "@class": "com.viz.ide.model.segment.ImageSegmentData",
+            "src": "usd.png"
+        }
+    },
+    "groupcells": false,
+    "hasSections": false,
+    "id": "selectCurrencySeg",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "indicator": "rowselect",
+            "showProgressIndicator": true
+        },
+        "viewType": "pageview"
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "b00696d1f71240cbaa2979c0cea3041c",
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": false,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom",
+        "vdistance": 1
+    },
+    "parent": "flxDropdownList",
+    "pf": "Home",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainselection": false,
+    "rowTemplateId": "g3298184a8f846fe97e86a81189fd7a5",
+    "rowcounter": 5,
+    "rowfocusskin": "s93946fe283e40d8a45c91841fdf280f",
+    "rowskin": "s502dc6c4c55436084e92ebd86ab19db",
+    "rowtemplate": "Flex0e58bd125806e42",
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionHeaderTemplateId": null,
+    "sectionheaderskin": "sf4c39f7c67c4998baf8c46ef0474a4e",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": [
+        0,
+        0
+    ],
+    "selectedindices": null,
+    "selecteditems": {
+        "imgCurr": {
+            "@class": "com.viz.ide.model.segment.ImageSegmentData",
+            "src": "usd.png"
+        }
+    },
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "selectionbehaviorconfig": null,
+    "separatorrequired": false,
+    "showprogressindicator": true,
+    "showscrollbars": false,
+    "swipeContext": {
+        "currentPage": 0,
+        "imageWidth": 201,
+        "widthRatio": 0
+    },
+    "viewtype": "pageview",
+    "vizProps": {},
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "Flex0e58bd125806e42": "Flex0e58bd125806e42",
+        "imgCurr": "imgCurr"
+    }
+}

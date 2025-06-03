@@ -1,0 +1,285 @@
+{
+    "@class": "com.kony.gen.viz.model.container.KVizSegment2",
+    "DNDConfig": null,
+    "_bottom_": {
+        "type": "string",
+        "value": "0dp"
+    },
+    "_data_": [
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        },
+        {
+            "imgCurr": {
+                "@class": "com.viz.ide.model.segment.ImageSegmentData",
+                "src": "imagedrag.png"
+            },
+            "lblConvertedMoney": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "Label"
+            },
+            "lblCurrNameS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "US Dollars"
+            },
+            "lblCurrSymbolS": {
+                "@class": "com.viz.ide.model.segment.SimpleTextSegmentData",
+                "text": "USD"
+            }
+        }
+    ],
+    "_height_": {
+        "type": "string",
+        "value": "90%"
+    },
+    "_indicator_": "none",
+    "_left_": {
+        "type": "string",
+        "value": "0"
+    },
+    "_margin_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_orientation_": 2,
+    "_padding_": [
+        0,
+        0,
+        0,
+        0
+    ],
+    "_width_": {
+        "type": "string",
+        "value": "100%"
+    },
+    "autogrowmode": 0,
+    "canUpdateUI": true,
+    "containerweight": 100,
+    "counter": "09",
+    "focusedindex": null,
+    "focuseditem": null,
+    "groupcells": false,
+    "hasSections": false,
+    "id": "currConvSeg",
+    "info": null,
+    "ipad": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iphone": {
+        "psp": {
+            "indicator": "rowselect"
+        }
+    },
+    "iscustomlayout": false,
+    "isvisible": true,
+    "kuid": "f8d28b8a075b4ec2b075d92028a4dc4e",
+    "masterdata": {},
+    "name": "kony.ui.SegmentedUI2",
+    "needpageindicator": true,
+    "pageoffdotimage": "pageoffdot.png",
+    "pageondotimage": "pageondot.png",
+    "paginationconfig": {
+        "position": "bottom"
+    },
+    "parent": "flxCurrencyConverter",
+    "pf": "Home",
+    "retaincontentalignment": false,
+    "retainflexpositionproperties": false,
+    "retainselection": false,
+    "rowTemplateId": "ga5167742b844d83a68e3843398ceb78",
+    "rowcounter": 9,
+    "rowfocusskin": "s93946fe283e40d8a45c91841fdf280f",
+    "rowskin": "s511cc8442654bcdb0b484044e31a4dd",
+    "rowtemplate": "Flex0f17faeb8976d4d",
+    "screenlevelwidget": false,
+    "seccounter": 0,
+    "sectionheaderskin": "sf4c39f7c67c4998baf8c46ef0474a4e",
+    "selectedRows": null,
+    "selectedState": false,
+    "selectedindex": null,
+    "selectedindices": null,
+    "selecteditems": null,
+    "selectedsectionindex": 0,
+    "selectionbehavior": "default",
+    "separatorcolor": "aaaaaa00",
+    "separatorrequired": true,
+    "separatorthickness": 1,
+    "showscrollbars": false,
+    "viewtype": "tableview",
+    "vizProps": {},
+    "wType": "Segment",
+    "widgetalignment": 5,
+    "widgetdatamap": {
+        "Flex0f17faeb8976d4d": "Flex0f17faeb8976d4d",
+        "FlexContainer0bec46310876342": "FlexContainer0bec46310876342",
+        "FlexContainer0c59f49e9761a41": "FlexContainer0c59f49e9761a41",
+        "FlexContainer0jbe49b0272a940": "FlexContainer0jbe49b0272a940",
+        "imgCurr": "imgCurr",
+        "lblConvertedMoney": "lblConvertedMoney",
+        "lblCurrNameS": "lblCurrNameS",
+        "lblCurrSymbolS": "lblCurrSymbolS"
+    }
+}
