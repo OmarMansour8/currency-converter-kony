@@ -30,7 +30,3 @@ You can test the app live using this Appetize emulator:
 
 ---
 
-## 📸 Screenshots
-![Main Screen](./assets/1.png)
-![Second Screen](./assets/2.png)
-
