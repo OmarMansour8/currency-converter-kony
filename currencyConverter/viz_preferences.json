@@ -1,0 +1,88 @@
+{
+    "FP": {
+        "spabb": false,
+        "desktopweb": false,
+        "iphone": false,
+        "spaip": false,
+        "android": false,
+        "spaan": true,
+        "winphone8": false,
+        "spawinphone8": false,
+        "ipad": false,
+        "spaipad": false,
+        "tabrcandroid": false,
+        "spaandroidtablet": false,
+        "windows8": false,
+        "spawindowstablet": false
+    },
+    "general": {
+        "codeEditor": {
+            "indentConf": {},
+            "externalEditor": {
+                "displayName": "Sublime"
+            }
+        },
+        "proxyConfig": {},
+        "remoteMACConfig": {},
+        "testRecorder": {
+            "port": 9111
+        },
+        "AllowLockManagementSettings": false,
+        "urls": {
+            "konyFabricURL": "https://infinity-public.apps.openshift.qimb.net",
+            "accountsBase": "https://infinity-public.apps.openshift.qimb.net/authService/accounts",
+            "accountsApiBase": "https://infinity-public.apps.openshift.qimb.net:443/accounts/api/v1_0",
+            "portalBase": "https://infinity-public.apps.openshift.qimb.net:443/mfconsole"
+        },
+        "inlinePreviewEnabled": false,
+        "isHtmlPreviewEnabled": false,
+        "autoCollapsePW": false,
+        "widgetHighlighterActionButtons": false,
+        "isSnapModeEnabled": true,
+        "containerPlaceholders": true,
+        "skipAppSigningRequirements": false,
+        "autoDetectIP": true,
+        "staticIP": "",
+        "autoUpdate": true,
+        "enableExternalAuth": false,
+        "authProvider": "",
+        "groupServicesByCategory": false,
+        "donotShowGenerateObjectModelUpdate": false,
+        "ANDROID_HOME": "C:\\Users\\MASAREF\\AppData\\Local\\Android\\Sdk",
+        "bundletoolLocation": "",
+        "JAVA_HOME": "C:\\Program Files\\Java\\jdk-11",
+        "donotShowDebugPopup": true,
+        "donotShowFPBinaryDebugPopup": false,
+        "ANDROID_DEBUGGER_PORT": 9222,
+        "ANDROID_FP_DEBUGGER_PORT": 9333
+    },
+    "build": {
+        "nativeLocal": {
+            "postBuildAction": "saveAppBinaryLocally",
+            "platforms": {
+                "iphone": false,
+                "android": true,
+                "winphone10": false,
+                "ipad": false,
+                "tabrcandroid": false,
+                "windows10": false,
+                "universalios": false,
+                "universalandroid": false,
+                "universalwindows": false,
+                "watchos": false,
+                "androidwearos": false,
+                "kiosk": false
+            }
+        },
+        "removeprintstatements_release": true,
+        "removeprintstatements_debug": false,
+        "support_multiple_ios_workspaces": false
+    },
+    "previewMode": "debug",
+    "starter": {
+        "general": {
+            "enableMetrics": true
+        }
+    },
+    "vizTheme": "dark"
+}
