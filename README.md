@@ -22,4 +22,13 @@ This project is a **Currency Converter** built using **Temenos Quantum (formerly
 - Supports wide range of international currencies
 - Simple and responsive form UI with dropdowns for "From" and "To" currencies
 
+## 📱 Live Demo (via Appetize.io)
+
+You can test the app live using this Appetize emulator:
+
+👉 [Launch App on Appetize.io](https://appetize.io/app/b_gx2swcvbb63zkvhpyqe5nicmgm)
+
 ---
+
+## 📸 Screenshots
+
