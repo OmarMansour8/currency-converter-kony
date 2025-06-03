@@ -1,0 +1,2118 @@
+{
+  "!name": "kony-sdk",
+  "!define": {
+    "kony.sdk.prototype.getConfigurationService.!ret": "+ConfigurationService",
+    "kony.sdk.prototype.getIdentityService.!ret": "+IdentityService",
+    "kony.sdk.prototype.getLogicService.!ret": "+kony.sdk.LogicService",
+    "kony.sdk.prototype.getObjectService.!ret": "+kony.sdk.OfflineObjectService",
+    "kony.sdk.prototype.getIntegrationService.!ret": "+IntegrationService",
+    "kony.sdk.prototype.getMessagingService.!ret": "+MessagingService",
+    "kony.sdk.prototype.getMetricsService.!ret": "+MetricsService",
+    "kony.sdk.prototype.getSyncService.!ret": "+konySdkSyncService",
+    "kony.sdk.dto.SelectQuery.prototype.addColumn.!ret": "[?]",
+    "kony.sdk.dto.SelectQuery.prototype.addCriteria.!ret": "[?]",
+    "kony.sdk.dto.SelectQuery.prototype.getTables.!ret": "[?]",
+    "kony.sdk.dto.SelectQuery.prototype.getColumns.!ret": "[?]",
+    "kony.sdk.dto.SelectQuery.prototype.getCriterias.!ret": "[?]",
+    "kony.sdk.dto.SelectQuery.prototype.getGroups.!ret": "[?]",
+    "kony.sdk.dto.SelectQuery.prototype.getJoins.!ret": "[?]",
+    "kony.sdk.dto.SelectQuery.prototype.getOrders.!ret": "[?]"
+  },
+  "ConfigurationService": {
+    "prototype": {
+      "getAllClientAppProperties": {
+        "!type": "fn(successCallback: ?, failureCallback: ?) -> ?",
+        "!span": "5749[181:31]-5774[181:56]",
+        "!doc": "Configuration svc method to get all the client app properties which is configured in admin console.\n@successCallback this is called on successfull retrieval of properties\n@failureCallback this is called on failure in retrieving properties\n@returns {json} key value pair of all client app properties"
+      }
+    },
+    "!type": "fn(konyRef: string)",
+    "!span": "5356[173:9]-5376[173:29]",
+    "!doc": "Should not be called by the developer.\n@class\n@classdesc Configuration service instance for fetching client app properties."
+  },
+  "IdentityService": {
+    "prototype": {
+      "register": {
+        "!type": "fn(params: ?, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "6155[196:26]-6163[196:34]"
+      },
+      "login": {
+        "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+        "!span": "6257[197:26]-6262[197:31]"
+      },
+      "validateMfa": {
+        "!type": "fn(mfaParams: ?, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "6348[198:26]-6359[198:37]"
+      },
+      "getMfaDetails": {
+        "!type": "fn()",
+        "!span": "6457[199:26]-6470[199:39]"
+      },
+      "usePersistedLogin": {
+        "!type": "fn()",
+        "!span": "6517[200:26]-6534[200:43]"
+      },
+      "logout": {
+        "!type": "fn(successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "6578[201:26]-6584[201:32]"
+      },
+      "getBackendToken": {
+        "!type": "fn(fromserver: ?, options: ?, successCallback: ?, failureCallback: ?)",
+        "!span": "6670[202:26]-6685[202:41]"
+      },
+      "getProfile": {
+        "!type": "fn(fromserver: ?, successCallback: ?, failureCallback: ?)",
+        "!span": "6783[203:26]-6793[203:36]"
+      },
+      "getProviderName": {
+        "!type": "fn() -> string",
+        "!span": "6882[204:26]-6897[204:41]"
+      },
+      "getProviderType": {
+        "!type": "fn()",
+        "!span": "6954[205:26]-6969[205:41]"
+      },
+      "getUserData": {
+        "!type": "fn(successCallback: ?, failureCallback: ?)",
+        "!span": "7015[206:26]-7026[206:37]"
+      },
+      "getUserAttributes": {
+        "!type": "fn(successCallback: ?, failureCallback: ?)",
+        "!span": "7105[208:26]-7122[208:43]"
+      },
+      "getSecurityAttributes": {
+        "!type": "fn(successCallback: ?, failureCallback: ?)",
+        "!span": "7201[210:26]-7222[210:47]"
+      }
+    },
+    "!type": "fn(konyRef: string, rec: string)",
+    "!span": "6092[194:9]-6107[194:24]",
+    "!doc": "Should not be called by the developer.\n@class\n@classdesc Identity service instance for handling login/logout calls."
+  },
+  "konySdkLogger": {
+    "prototype": {
+      "INDIRECTIONLEVEL": {
+        "!type": "number",
+        "!span": "7447[218:24]-7463[218:40]"
+      },
+      "trace": {
+        "!type": "fn(msg: ?, params: ?)",
+        "!span": "7494[219:24]-7499[219:29]"
+      },
+      "debug": {
+        "!type": "fn(msg: ?, params: ?)",
+        "!span": "7599[222:24]-7604[222:29]"
+      },
+      "info": {
+        "!type": "fn(msg: ?, params: ?)",
+        "!span": "7704[225:24]-7708[225:28]"
+      },
+      "warn": {
+        "!type": "fn(msg: ?, params: ?)",
+        "!span": "7807[228:24]-7811[228:28]"
+      },
+      "error": {
+        "!type": "fn(msg: ?, params: ?)",
+        "!span": "7910[231:24]-7915[231:29]"
+      },
+      "fatal": {
+        "!type": "fn(msg: ?, params: ?)",
+        "!span": "8015[234:24]-8020[234:29]"
+      }
+    },
+    "!type": "fn()",
+    "!span": "7402[217:9]-7415[217:22]",
+    "!doc": "=================================== LOGGER SERVICE ======================================================="
+  },
+  "konyLogger": {
+    "prototype": {
+      "log": {
+        "!type": "fn(text: ?)",
+        "!span": "54065[1891:21]-54068[1891:24]"
+      }
+    },
+    "!type": "fn()",
+    "!span": "54024[1889:9]-54034[1889:19]",
+    "!doc": "==================================================================================================================="
+  },
+  "IntegrationService": {
+    "prototype": {
+      "getUrl": {
+        "!type": "fn() -> string",
+        "!span": "59468[2068:29]-59474[2068:35]"
+      },
+      "invokeOperation": {
+        "!type": "fn(operationName: ?, headers: ?, data: ?, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "59542[2072:29]-59557[2072:44]"
+      },
+      "uploadBinaryData": {
+        "!type": "fn(operationName: ?, uploadParams: ?, fileUploadStartedCallback: ?, chunkUploadCompletedCallback: ?, fileUploadCompletedCallback: ?, fileUploadFailureCallback: ?, options: ?)",
+        "!span": "59735[2075:29]-59751[2075:45]"
+      },
+      "getBinaryData": {
+        "!type": "fn(operationName: ?, fileparams: ?, streaming: ?, headers: ?, fileDownloadStartedCallback: ?, chunkDownloadCompletedCallback: ?, fileDownloadCompletedCallback: ?, downloadFailureCallback: ?, options: ?)",
+        "!span": "60066[2079:29]-60079[2079:42]"
+      }
+    },
+    "!type": "fn(konyRef: ?, serviceName: ?)",
+    "!span": "59391[2066:9]-59409[2066:27]"
+  },
+  "MessagingService": {
+    "prototype": {
+      "getUrl": {
+        "!type": "fn()",
+        "!span": "60985[2103:27]-60991[2103:33]"
+      },
+      "setKSID": {
+        "!type": "fn(ksid: ?)",
+        "!span": "61041[2106:27]-61048[2106:34]"
+      },
+      "getKSID": {
+        "!type": "fn()",
+        "!span": "61102[2109:27]-61109[2109:34]"
+      },
+      "setAuthToken": {
+        "!type": "fn(authToken: ?)",
+        "!span": "61159[2112:27]-61171[2112:39]"
+      },
+      "getAuthToken": {
+        "!type": "fn(options: ?)",
+        "!span": "61231[2115:27]-61243[2115:39]"
+      },
+      "setKmsAppId": {
+        "!type": "fn(id: ?)",
+        "!span": "61300[2118:27]-61311[2118:38]"
+      },
+      "getKmsAppId": {
+        "!type": "fn()",
+        "!span": "61363[2121:27]-61374[2121:38]"
+      },
+      "register": {
+        "!type": "fn(osType: string, deviceId: string, pnsToken: string, email: string, successCallback: ?, failureCallback: ?)",
+        "!span": "61778[2133:27]-61786[2133:35]",
+        "!doc": "register to messaging service\n@param {string} osType - Type of the operating system\n@param {string} deviceId - Device Id\n@param {string} pnsToken - Token value\n@param {string} email - email\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure"
+      },
+      "registerWithAuthToken": {
+        "!type": "fn(osType: string, deviceId: string, pnsToken: string, email: string, authToken: string, successCallback: ?, failureCallback: ?)",
+        "!span": "62309[2146:27]-62330[2146:48]",
+        "!doc": "register to messaging service\n@param {string} osType - Type of the operating system\n@param {string} deviceId - Device Id\n@param {string} authToken - Authorization Token\n@param {string} pnsToken - Token value\n@param {string} email - email\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure"
+      },
+      "unregister": {
+        "!type": "fn(successCallback: ?, failureCallback: ?)",
+        "!span": "62699[2155:27]-62709[2155:37]",
+        "!doc": "unregister to messaging service\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure"
+      },
+      "unregisterWithAuthToken": {
+        "!type": "fn(authToken: string, successCallback: ?, failureCallback: ?)",
+        "!span": "63023[2164:27]-63046[2164:50]",
+        "!doc": "unregister to messaging service\n@param {string} authToken - Authorization Token\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure"
+      },
+      "fetchAllMessages": {
+        "!type": "fn(startIndex: number, pageSize: number, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "63455[2175:27]-63471[2175:43]",
+        "!doc": "Fetch all messages\n@param {number} startIndex - starting index\n@param {number} pageSize - page size\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure\n@param {dictionary} options - {authToken: <Auth Token>}"
+      },
+      "updateGeoLocation": {
+        "!type": "fn(latitude: string, longitude: string, locationName: string, successCallback: ?, failureCallback: ?)",
+        "!span": "63951[2187:27]-63968[2187:44]",
+        "!doc": "Update the location\n@param {string} latitude - Latitude value\n@param {string} longitude - Longitude value\n@param {string} locationName - Location name\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure"
+      },
+      "updateGeoLocationWithAuthToken": {
+        "!type": "fn(latitude: string, longitude: string, locationName: string, authToken: string, successCallback: ?, failureCallback: ?)",
+        "!span": "64505[2200:27]-64535[2200:57]",
+        "!doc": "Update the location\n@param {string} latitude - Latitude value\n@param {string} longitude - Longitude value\n@param {string} locationName - Location name\n@param {string} authToken - Authorization Token\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure"
+      },
+      "markMessageRead": {
+        "!type": "fn(fetchId: string, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "65030[2211:27]-65045[2211:42]",
+        "!doc": "Mark the message as read for a given message id\n@param {string} fetchId - Message id\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure\n@param {dictionary} options - {authToken: <Auth Token>}"
+      },
+      "fetchMessageContent": {
+        "!type": "fn(fetchId: string, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "65446[2221:27]-65465[2221:46]",
+        "!doc": "Fetches the message conetent for a given message id\n@param {string} fetchId - Message id\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure\n@param {dictionary} options - {authToken: <Auth Token>}"
+      },
+      "registerGeoBoundaries": {
+        "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+        "!span": "65915[2230:27]-65936[2230:48]",
+        "!doc": "Register for registerGeoBoundaries with given radius\n@param {object} options - JSON Object with radius, pageSize, tags and customLogicCallback\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure of registerGeoBoundary and refreshGeoBoundariesFailure"
+      },
+      "subscribeAudience": {
+        "!type": "fn(firstName: string, lastName: string, emailId: string, mobileNumber: string, country: string, state: string, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "66611[2244:27]-66628[2244:44]",
+        "!doc": "subscribeAudience to create a audience for subscribed device\n@param {string} firstName - audience firstName\n@param {string} lastName - audience lastName\n@param {string} emailId - audience emailId\n@param {string} mobileNumber - audience mobileNumber\n@param {string} country - country\n@param {string} state - state\n@param {Object] options - {authToken: <Auth Token>} and user defined attributes like PAN no,SSN.\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure"
+      },
+      "unSubscribeAudience": {
+        "!type": "fn(successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "67072[2254:27]-67091[2254:46]",
+        "!doc": "delete subscribed audience\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure\n@param {dictionary} options - {authToken: <Auth Token>}"
+      },
+      "getSubscribedAudienceDetails": {
+        "!type": "fn(successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "67437[2263:27]-67465[2263:55]",
+        "!doc": "get subscribed audience details\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure\n@param {dictionary} options - {authToken: <Auth Token>}"
+      },
+      "getRichPushContent": {
+        "!type": "fn(pushId: ?, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "67931[2274:27]-67949[2274:45]",
+        "!doc": "get rich push content\n@param pushId {string} - pushId for getting rich push content.Which we get after registering\nfor push notifications.\n@param {function} successCallback - Callback method on success\n@param {function} failureCallback - Callback method on failure\n@param {dictionary} options - {authToken: <Auth Token>}"
+      },
+      "updateListOfBeacons": {
+        "!type": "fn(uuId: string, major: string, minor: string, successCallback: ?, failureCallback: ?, options: ?)",
+        "!span": "68653[2286:27]-68672[2286:46]",
+        "!doc": "   * Update the list of beacons\n   * @param {string} uuId - Universally Unique Identifier to identify a beacon in a network\n   * @param {string} major - major id to identity and distinguish a group\n   * @param {string} minor - distinguishing individual beacons within a group of beacons assigned a major value.\n\t* @param {function} successCallback - Callback method called on success.\n\t* @param {function} failureCallback - Callback method called on failure.\n\t* @param {object} options - options which accepts optional parameters such as ufid,appid and {authToken: <Auth Token>}"
+      },
+      "manageGeoBoundariesCallback": {
+        "!type": "fn(data: ?)",
+        "!span": "68842[2290:27]-68869[2290:54]"
+      }
+    },
+    "!type": "fn(konyRef: +kony.sdk)",
+    "!span": "60925[2101:9]-60941[2101:25]",
+    "!doc": "Should not be called by the developer.\n@class\n@classdesc Messaging service instance for invoking the Messaging services.\n@param konyRef - reference to kony object"
+  },
+  "MetricsService": {
+    "prototype": {
+      "getUserId": {
+        "!type": "fn(userId: ?)",
+        "!span": "69516[2313:25]-69525[2313:34]"
+      },
+      "setFlowTag": {
+        "!type": "fn(flowTag: string)",
+        "!span": "69738[2319:25]-69748[2319:35]",
+        "!doc": "This method will take the a String to set a Flow Tag for the reported events.\n@param {string} flowTag - sets flow tag for reporting the events."
+      },
+      "clearFlowTag": {
+        "!type": "fn()",
+        "!span": "69881[2325:25]-69893[2325:37]",
+        "!doc": "This method will clear the flow tag set by the user previously."
+      },
+      "getFlowTag": {
+        "!type": "fn() -> string",
+        "!span": "70117[2332:25]-70127[2332:35]",
+        "!doc": "This method will return the a String to set a Flow Tag for the reported events.\n@return {string} flowTag - flow tag set by the user for reporting the events."
+      },
+      "setEventConfig": {
+        "!type": "fn(confType: string, eventBufferAutoFlushCount: number, eventBufferMaxCount: number)",
+        "!span": "70720[2346:25]-70734[2346:39]",
+        "!doc": "This method will take the required values to set the event Configuration values.\n@param {string} confType - sets the Current Configuration Type\n\t\t\t\t\tpossible values BUFFER or INSTANT.\n@param {number} eventBufferAutoFlushCount - event buffer count to auto flush the events\n\t\t\t\t\t\t\t\tpossible values any positive integer\n\t\t\t\t\t\t\t\tDefault value 15\n@param {number} eventBufferMaxCount - Maximum event buffer count to store the events\n\t\t\t\t\t\t\t\tpossible values any positive integer\n\t\t\t\t\t\t\t\tDefault value 1000"
+      },
+      "sendEvent": {
+        "!type": "fn(evttype: string, evtSubType: string, formID: string, widgetID: string, flowTag: string, metaData: string)",
+        "!span": "71451[2360:25]-71460[2360:34]",
+        "!doc": "This method takes the event details from the developer and schedule it for sending to server as per Configuration values set by the developer.\n@param {string} evttype - Event Type for the reported event.\n@param {string} evtSubType - string literal for eventSubType(max 256 Chars)\n@param {string} formID -   string literal for formID(max 256 Chars)\n@param {string} widgetID - string literal for widgetID(max 256 Chars)\n@param {string} flowTag - string literal to override flow tag (max 256 Chars)\n@param {string} metaData - string to describe metaData\n@throws Exception"
+      },
+      "flushEvents": {
+        "!type": "fn()",
+        "!span": "71645[2367:25]-71656[2367:36]",
+        "!doc": "This method will send the buffered events to the server at once."
+      },
+      "sendCustomMetrics": {
+        "!type": "fn(reportingGroupID: string, metrics: ?)",
+        "!span": "71870[2376:25]-71887[2376:42]",
+        "!doc": "invoke the sendCustomMetrics operation\n@param {string} reportingGroupID - reporting Group ID\n@param {object} metrics - metrics being reported"
+      },
+      "reportError": {
+        "!type": "fn(errorCode: string, errorType: string, errorMessage: string, errorDetails: ?)",
+        "!span": "72648[2389:25]-72659[2389:36]",
+        "!doc": "* This method takes the event details from the developer and schedule it for sending to server as per Configuration values set by the developer.\n* @param {string} errorCode - errorCode of the reported error. Can be empty if not applicable\n* @param {string} errorType -   errorType of the reported error. Can be empty if not applicable\n* @param {string} errorMessage - errorMessage of the reported error. Can be empty if not applicable\n* @param {json} errorDetails - errorDetails of the reported error as a json string that can have key-value pairs for the following\nkeys errfile, errmethod, errline, errstacktrace, formID, widgetID, flowTag.\n* @throws Exception"
+      },
+      "reportHandledException": {
+        "!type": "fn(exceptionCode: string, exceptionType: string, exceptionMessage: string, exceptionDetails: ?)",
+        "!span": "73501[2404:25]-73523[2404:47]",
+        "!doc": "* This method takes the event details from the developer and schedule it for sending to server as per Configuration values set by the developer.\n* @param {string} exceptionCode - Code for the reported exception. Can be empty if not applicable\n* @param {string} exceptionType -   Type of the reported exception. Can be empty if not applicable\n* @param {string} exceptionMessage - Message of the reported exception. Can be empty if not applicable\n* @param {json}   exceptionDetails - Details of the reported exception as a JSON string that can have key-value pairs for the\nfollowing keys exceptioncode, exceptionfile, exceptionmethod, exceptionline,\nexceptionstacktrace, formID, widgetID, flowTag.\n* @throws Exception"
+      },
+      "setEventTracking": {
+        "!type": "fn(eventTypes: ?)",
+        "!span": "73749[2412:25]-73765[2412:41]",
+        "!doc": "stub method used for event tracking"
+      }
+    },
+    "!type": "fn(konyRef: ?)",
+    "!span": "69460[2311:9]-69474[2311:23]",
+    "!doc": "Should not be called by the developer.\n@class\n@classdesc Metrics service instance for invoking the Metrics services."
+  },
+  "konySdkSyncService": {
+    "prototype": {
+      "init": {
+        "!type": "fn(initSuccess: ?, initFailure: ?)",
+        "!span": "74279[2432:29]-74283[2432:33]",
+        "!doc": "generic apis"
+      },
+      "reset": {
+        "!type": "fn(resetSuccess: ?, resetFailure: ?)",
+        "!span": "74359[2435:29]-74364[2435:34]"
+      },
+      "cancelPendingChunkRequests": {
+        "!type": "fn(successCallback: ?, errorCallback: ?)",
+        "!span": "74442[2438:29]-74468[2438:55]"
+      },
+      "stopSession": {
+        "!type": "fn(successCallback: ?)",
+        "!span": "74550[2441:29]-74561[2441:40]"
+      },
+      "rollbackPendingLocalChanges": {
+        "!type": "fn(successCallback: ?, errorCallback: ?)",
+        "!span": "74628[2444:29]-74655[2444:56]"
+      },
+      "getPendingAcknowledgement": {
+        "!type": "fn(successCallback: ?, errorCallback: ?)",
+        "!span": "74737[2447:29]-74762[2447:54]"
+      },
+      "getPendingUpload": {
+        "!type": "fn(successCallback: ?, errorCallback: ?)",
+        "!span": "74844[2450:29]-74860[2450:45]"
+      },
+      "getDeferredUpload": {
+        "!type": "fn(successCallback: ?, errorCallback: ?)",
+        "!span": "74942[2453:29]-74959[2453:46]"
+      },
+      "getAllPendingUploadInstances": {
+        "!type": "fn(retrieveOnlyCount: ?, successcallback: ?, errorcallback: ?)",
+        "!span": "75041[2456:29]-75069[2456:57]"
+      },
+      "executeSelectQuery": {
+        "!type": "fn(query: ?, successcallback: ?, errorcallback: ?)",
+        "!span": "75240[2460:29]-75258[2460:47]"
+      },
+      "getFailedBinaryRecords": {
+        "!type": "fn(isDownload: ?, tablename: ?, columnname: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "75373[2464:29]-75395[2464:51]",
+        "!doc": "adding the binary apis"
+      },
+      "getStatusForBinary": {
+        "!type": "fn(tbname: ?, columnName: ?, pks: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "75576[2468:29]-75594[2468:47]"
+      },
+      "getBinaryBase64": {
+        "!type": "fn(tbname: ?, columnName: ?, pks: ?, config: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "75761[2472:29]-75776[2472:44]"
+      },
+      "getBinaryFilepath": {
+        "!type": "fn(tbname: ?, columnName: ?, pks: ?, config: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "75948[2476:29]-75965[2476:46]"
+      },
+      "createDownloadTask": {
+        "!type": "fn(tbname: ?, columnName: ?, pks: ?, config: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "76161[2480:29]-76179[2480:47]",
+        "!doc": "binary chunking apis"
+      },
+      "startDownload": {
+        "!type": "fn(downloadID: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "76354[2484:29]-76367[2484:42]"
+      },
+      "pauseDownload": {
+        "!type": "fn(downloadID: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "76461[2487:29]-76474[2487:42]"
+      },
+      "resumeDownload": {
+        "!type": "fn(downloadID: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "76568[2490:29]-76582[2490:43]"
+      },
+      "getBinaryDataFilePath": {
+        "!type": "fn(tbname: ?, columnName: ?, pks: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "76676[2493:29]-76697[2493:50]"
+      },
+      "getBinary": {
+        "!type": "fn(tableName: ?, binaryColumnName: ?, primaryKeyTable: ?, config: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "76867[2497:29]-76876[2497:38]"
+      },
+      "deleteBinaryObject": {
+        "!type": "fn(tableName: ?, binaryColumnName: ?, primaryKeyTable: ?, options: ?, successCallback: ?, errorCallback: ?)",
+        "!span": "77063[2501:29]-77081[2501:47]"
+      },
+      "startSession": {
+        "!type": "fn(config: ?)",
+        "!span": "77294[2506:29]-77306[2506:41]",
+        "!doc": "modified api"
+      },
+      "performUpgrade": {
+        "!type": "fn(config: ?)",
+        "!span": "77364[2509:29]-77378[2509:43]"
+      },
+      "isUpgradeRequired": {
+        "!type": "fn(config: ?)",
+        "!span": "77436[2512:29]-77453[2512:46]"
+      },
+      "startReconciliation": {
+        "!type": "fn(config: ?)",
+        "!span": "77511[2515:29]-77530[2515:48]"
+      }
+    },
+    "!type": "fn(konyRef: +kony.sdk)",
+    "!span": "74137[2427:9]-74155[2427:27]"
+  },
+  "kony": {
+    "sdk": {
+      "prototype": {
+        "globalRequestParams": {
+          "!span": "225[11:19]-244[11:38]"
+        },
+        "getDataStore": {
+          "!type": "fn()",
+          "!span": "535[21:19]-547[21:31]"
+        },
+        "setDataStore": {
+          "!type": "fn(dataStore: ?)",
+          "!span": "615[24:19]-627[24:31]"
+        },
+        "getUserId": {
+          "!type": "fn()",
+          "!span": "711[28:19]-720[28:28]"
+        },
+        "setCurrentUserId": {
+          "!type": "fn(newUserID: ?)",
+          "!span": "780[31:19]-796[31:35]"
+        },
+        "setClientParams": {
+          "!type": "fn(clientParamsMap: ?)",
+          "!span": "872[35:19]-887[35:34]"
+        },
+        "getClientParams": {
+          "!type": "fn()",
+          "!span": "981[39:19]-996[39:34]"
+        },
+        "globalRequestParamType": {
+          "headers": {
+            "!type": "string",
+            "!span": "1096[44:4]-1103[44:11]"
+          },
+          "queryParams": {
+            "!type": "string",
+            "!span": "1120[45:4]-1131[45:15]"
+          },
+          "bodyParams": {
+            "!type": "string",
+            "!span": "1152[46:4]-1162[46:14]"
+          },
+          "!span": "1064[43:19]-1086[43:41]"
+        },
+        "getGlobalRequestParams": {
+          "!type": "fn(paramType: ?) -> !this.globalRequestParams",
+          "!span": "1202[49:19]-1224[49:41]"
+        },
+        "setGlobalRequestParam": {
+          "!type": "fn(paramName: ?, paramValue: ?, paramType: ?)",
+          "!span": "1798[62:19]-1819[62:40]"
+        },
+        "removeGlobalRequestParam": {
+          "!type": "fn(paramName: ?, paramType: ?)",
+          "!span": "1893[65:19]-1917[65:43]"
+        },
+        "resetGlobalRequestParams": {
+          "!type": "fn()",
+          "!span": "1978[68:19]-2002[68:43]"
+        },
+        "appendGlobalHeaders": {
+          "!type": "fn(headers: ?)",
+          "!span": "2043[71:19]-2062[71:38]"
+        },
+        "appendGlobalBodyParams": {
+          "!type": "fn(params: ?)",
+          "!span": "2110[74:19]-2132[74:41]"
+        },
+        "appendGlobalQueryParams": {
+          "!type": "fn(url: ?) -> !0",
+          "!span": "2179[77:19]-2202[77:42]"
+        },
+        "appendGlobalParams": {
+          "!type": "fn(url: ?, headers: ?, params: ?)",
+          "!span": "2263[81:19]-2281[81:37]"
+        },
+        "init": {
+          "!type": "fn(appKey: string, appSecret: string, serviceUrl: string, successCallback: ?, failureCallback: ?)",
+          "!span": "3289[107:19]-3293[107:23]",
+          "!doc": "Initialization method for the kony SDK.\nThis method will fetch the app configuration from the kony server and stores in memory.\nThis method has to be invoked before invoking any other SDK methods.\n@param {string} appKey - Appkey of the kony application\n@param {string} appSecret - App Secret of the kony application\n@param {string} serviceUrl - URL of the kony Server\n@param {initSuccessCallback} successCallback  - Callback method on success\n@param {initFailureCallback} failureCallback - Callback method on failure"
+        },
+        "initWithServiceDoc": {
+          "!type": "fn(appKey: ?, appSecret: ?, serviceDoc: ?)",
+          "!span": "3398[110:19]-3416[110:37]"
+        },
+        "publishServerEvents": {
+          "!type": "fn(events: ?, publishOptions: ?)",
+          "!span": "3913[125:19]-3932[125:38]",
+          "!doc": "* Publish events to the server.\n*\n* example : [{\"topic\" : \"transaction/deposit\",\n                      \"data\" : { \"amount\": \"1500\",\n                      \"user\": \"clientevents\",\n                      \"account\": \"1000\",\n                      \"transaction\": \"deposit\" }}]\n* @param events         events string to be published to the server\n* @param publishOptions additional options for publishing"
+        },
+        "subscribeServerEvents": {
+          "!type": "fn(topicsToSubscribe: ?, options: ?)",
+          "!span": "4250[136:19]-4271[136:40]",
+          "!doc": "Subscribe to server events.\n\nexample : [\"transaction/deposit\",\n           \"transaction/withdraw\"]\n@param events            events string to be sent to the server\n@param subscribeOptions additional options for subscribing"
+        },
+        "unSubscribeServerEvents": {
+          "!type": "fn(topicsToUnsubscribe: ?, unsubscribeOptions: ?)",
+          "!span": "4588[147:19]-4611[147:42]",
+          "!doc": "Unsubscribe from server events.\n\nexample : [\"transaction/deposit\",\n           \"transaction/withdraw\"]\n@param events             events string to unsubscribe\n@param unSubscribeOptions additional options to unsubscribe"
+        },
+        "getConfigurationService": {
+          "!type": "fn() -> +ConfigurationService",
+          "!span": "5114[165:19]-5137[165:42]",
+          "!doc": "Method to create the configuration service instance\n@returns {ConfigurationService} Configuration service instance"
+        },
+        "getIdentityService": {
+          "!type": "fn(providerName: ?) -> +IdentityService",
+          "!span": "5851[186:19]-5869[186:37]"
+        },
+        "getLogicService": {
+          "!type": "fn(serviceName: ?) -> +kony.sdk.LogicService",
+          "!span": "8229[240:19]-8244[240:34]",
+          "!doc": "=================================== LOGIC SERVICE ========================================================"
+        },
+        "registerObjectService": {
+          "!type": "fn(objectServiceType: ?, objectServiceClass: ?)",
+          "!span": "8876[257:19]-8897[257:40]"
+        },
+        "getObjectService": {
+          "!type": "fn(serviceName: ?, options: ?) -> ?",
+          "!span": "8976[260:19]-8992[260:35]"
+        },
+        "setServerEventsCallbacks": {
+          "!type": "fn(options: ?)",
+          "!span": "9400[270:19]-9424[270:43]",
+          "!doc": "=================================== Websocket APIs ==========================================================="
+        },
+        "enableDebug": {
+          "!type": "fn()",
+          "!span": "47570[1635:19]-47581[1635:30]",
+          "!doc": "================================================================================================================"
+        },
+        "disableDebug": {
+          "!type": "fn()",
+          "!span": "47623[1638:19]-47635[1638:31]"
+        },
+        "getIntegrationService": {
+          "!type": "fn(serviceName: string) -> +IntegrationService",
+          "!span": "59323[2061:19]-59344[2061:40]",
+          "!doc": "Method to create the integration service instance with the provided service name.\n@param {string} serviceName - Name of the service\n@returns {IntegrationService} Integration service instance"
+        },
+        "getMessagingService": {
+          "!type": "fn() -> +MessagingService",
+          "!span": "60645[2091:19]-60664[2091:38]",
+          "!doc": "Method to create the messaging service instance.\n@returns {MessagingService} Messaging service instance"
+        },
+        "getMetricsService": {
+          "!type": "fn() -> !this.metricsServiceObject",
+          "!span": "69184[2300:19]-69201[2300:36]",
+          "!doc": "Method to create the Metrics service instance with the provided service name.\n@returns {MetricsService} Metrics service instance"
+        },
+        "getSyncService": {
+          "!type": "fn() -> +konySdkSyncService",
+          "!span": "73924[2419:19]-73938[2419:33]",
+          "!doc": "Method to create the sync service instance.\n@returns {SyncService} sync service instance"
+        }
+      },
+      "version": {
+        "!type": "string",
+        "!span": "2451[87:9]-2458[87:16]"
+      },
+      "getDefaultInstance": {
+        "!type": "fn()",
+        "!span": "2512[90:9]-2530[90:27]"
+      },
+      "skipAnonymousLoginCall": {
+        "!type": "fn(state: ?)",
+        "!span": "2661[94:9]-2683[94:31]",
+        "!doc": "This is to be set by client to skip anonymous login calls."
+      },
+      "ClientCache": {
+        "prototype": {
+          "get": {
+            "!type": "fn(key: ?)",
+            "!span": "4739[153:31]-4742[153:34]"
+          },
+          "has": {
+            "!type": "fn(key: ?)",
+            "!span": "4797[155:31]-4800[155:34]"
+          },
+          "remove": {
+            "!type": "fn(key: ?)",
+            "!span": "4855[157:31]-4861[157:37]"
+          },
+          "add": {
+            "!type": "fn(key: ?, value: ?, expiryTime: ?)",
+            "!span": "4916[159:31]-4919[159:34]"
+          }
+        },
+        "!type": "fn(size: ?)",
+        "!span": "4672[151:9]-4683[151:20]"
+      },
+      "LogicService": {
+        "prototype": {
+          "getLogicServiceUrl": {
+            "!type": "fn()",
+            "!span": "8600[250:32]-8618[250:50]"
+          },
+          "invokeOperation": {
+            "!type": "fn(serviceName: ?, path: ?, methodType: ?, headers: ?, data: ?, successCallback: ?, failureCallback: ?, options: ?)",
+            "!span": "8672[253:32]-8687[253:47]"
+          }
+        },
+        "!type": "fn(konyRef: +kony.sdk, serviceName: ?)",
+        "!span": "8345[244:9]-8357[244:21]"
+      },
+      "OnlineObjectService": {
+        "prototype": {
+          "create": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "10655[303:39]-10661[303:45]",
+            "!doc": "This method is used to create a record on the object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject),\"headers\":<map of http headers>}\n@param successCallback\n@param failureCallback"
+          },
+          "fetch": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "10999[312:39]-11004[312:44]",
+            "!doc": "This method is used to fetch a record on the object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject),\"headers\":<map of http headers>}\n@param successCallback\n@param failureCallback"
+          },
+          "update": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "11343[321:39]-11349[321:45]",
+            "!doc": "This method is used to update a record on the object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject),\"headers\":<map of http headers>}\n@param successCallback\n@param failureCallback"
+          },
+          "partialUpdate": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "11696[330:39]-11709[330:52]",
+            "!doc": "This method is used to partial update a record on the object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject),\"headers\":<map of http headers>}\n@param successCallback\n@param failureCallback"
+          },
+          "deleteRecord": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "12048[339:39]-12060[339:51]",
+            "!doc": "This method is used to delete a record on the object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject),\"headers\":<map of http headers>}\n@param successCallback\n@param failureCallback"
+          },
+          "customVerb": {
+            "!type": "fn(verbName: string, options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "12456[349:39]-12466[349:49]",
+            "!doc": "This method is used to for performing custom operation\n@param {string} verbName -  custom verb identifier\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject),\"headers\":<map of http headers>}\n@param successCallback\n@param failureCallback"
+          },
+          "getMetadataOfAllObjects": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "12795[358:39]-12818[358:62]",
+            "!doc": "This method is used to retrive metadata of all objects\n@param {map} options - includes {\"getFromServer\":boolean,\"headers\":<map of http headers>}\n@param successCallback\n@param failureCallback"
+          },
+          "getMetadataOfObject": {
+            "!type": "fn(objectName: ?, options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "13166[368:39]-13185[368:58]",
+            "!doc": "This method is used to retrive metadata of a specific object\n@param objectName\n@param {map} options - includes {\"getFromServer\":boolean,\"headers\":<map of http headers>}\n@param successCallback\n@param failureCallback"
+          },
+          "getDataUrl": {
+            "!type": "fn()",
+            "!span": "13371[372:39]-13381[372:49]"
+          },
+          "getBinaryUrl": {
+            "!type": "fn()",
+            "!span": "13443[375:39]-13455[375:51]"
+          },
+          "getOperationsUrl": {
+            "!type": "fn()",
+            "!span": "13517[378:39]-13533[378:55]"
+          },
+          "getMetadataUrl": {
+            "!type": "fn()",
+            "!span": "13595[381:39]-13609[381:53]"
+          },
+          "getVersion": {
+            "!type": "fn()",
+            "!span": "13671[384:39]-13681[384:49]"
+          },
+          "getBinaryData": {
+            "!type": "fn(options: ?, arg1: ?, arg2: ?, arg3: ?, arg4: ?, arg5: ?)",
+            "!span": "13743[387:39]-13756[387:52]"
+          },
+          "getBinaryContent": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "14105[396:39]-14121[396:55]",
+            "!doc": "Helps to get the binary content of the specified column on the Object\n@param {map} options - includes {\"dataObject\":{@link kony.sdk.dto.DataObject}, \"binaryAttrName\":columnName}\n@param successCallback\n@param failureCallback"
+          },
+          "createBinaryContent": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "14478[405:39]-14497[405:58]",
+            "!doc": "Helps to create the binary content of the specified column on the Object\n@param {map} options - includes {\"dataObject\": {@link kony.sdk.dto.DataObject}, \"binaryAttrName\":columnName}\n@param successCallback\n@param failureCallback"
+          },
+          "updateBinaryContent": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "14854[414:39]-14873[414:58]",
+            "!doc": "Helps to update the binary content of the specified column on the Object\n@param {map} options - includes {\"dataObject\": {@link kony.sdk.dto.DataObject}, \"binaryAttrName\":columnName}\n@param successCallback\n@param failureCallback"
+          }
+        },
+        "!type": "fn(konyRef: +kony.sdk, serviceName: ?)",
+        "!span": "9900[287:9]-9919[287:28]",
+        "!doc": "Method which returns the online ObjectService object\n@param konyRef\n@param serviceName\n@constructor"
+      },
+      "IObjectService": {
+        "prototype": {
+          "create": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "15267[422:34]-15273[422:40]"
+          },
+          "fetch": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "15371[425:34]-15376[425:39]",
+            "!doc": "This method is used to fetch records from the object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject)}\n@param successCallback\n@param failureCallback"
+          },
+          "update": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "15474[428:34]-15480[428:40]",
+            "!doc": "This method is used to update a record in the object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject)}\n@param successCallback\n@param failureCallback"
+          },
+          "deleteRecord": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "15578[431:34]-15590[431:46]",
+            "!doc": "This method is used to delete a record in the object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject)}\n@param successCallback\n@param failureCallback"
+          },
+          "getMetadataOfAllObjects": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "15688[434:34]-15711[434:57]",
+            "!doc": "This method is used to retrieve metadata of all objects\n@param options\n@param successCallback\n@param failureCallback"
+          },
+          "getMetadataOfObject": {
+            "!type": "fn(objectName: ?, options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "15809[437:34]-15828[437:53]",
+            "!doc": "This method is used to retrive metadata of a specific object\n@param objectName\n@param options\n@param successCallback\n@param failureCallback"
+          },
+          "executeSelectQuery": {
+            "!type": "fn(queryStr: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "18250[511:34]-18268[511:52]",
+            "!doc": "This method is used to execute an sql query\n@param queryStr\n@param successCallback\n@param failureCallback"
+          },
+          "getBinaryContent": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "18666[520:34]-18682[520:50]",
+            "!doc": "Helps to get the binary content of the specified column on the Object\n@param {map} options - includes {\"dataObject\":(@link kony.sdk.dto.DataObject), \"responsetype\":\"base64string/filepath(Default)\", \"binaryAttrName\":columnName}\n@param successCallback\n@param failureCallback"
+          }
+        },
+        "!type": "fn(konyRef: ?, serviceName: ?)",
+        "!span": "15064[419:9]-15078[419:23]",
+        "!doc": "================================================================================================================"
+      },
+      "OfflineObjectService": {
+        "prototype": {
+          "konyRef": {
+            "!type": "+kony.sdk",
+            "!span": "16316[450:41]-16323[450:48]"
+          },
+          "create": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "16456[455:40]-16462[455:46]"
+          }
+        },
+        "!type": "fn(konyRef: +kony.sdk, serviceName: ?)",
+        "!span": "16218[449:9]-16238[449:29]",
+        "!doc": "Method which returns the offline ObjectService object\n@param konyRef\n@param serviceName\n@constructor"
+      },
+      "dto": {
+        "DataObject": {
+          "prototype": {
+            "addField": {
+              "!type": "fn(fieldName: ?, value: ?)",
+              "!span": "19831[557:34]-19839[557:42]",
+              "!doc": "This function is used to add fields and their values to the dataobject\n@param fieldName\n@param value"
+            },
+            "setRecord": {
+              "!type": "fn(fieldValuesMap: ?)",
+              "!span": "20017[564:34]-20026[564:43]",
+              "!doc": "This function is used to set a map of records to the dataobject\n@param fieldValuesMap"
+            },
+            "getRecord": {
+              "!type": "fn() -> JSON",
+              "!span": "20213[571:34]-20222[571:43]",
+              "!doc": "This function is used to get the map of records present in the DataObject\n@returns {JSON} record"
+            },
+            "addChildDataObject": {
+              "!type": "fn(childDataObject: ?)",
+              "!span": "20423[578:34]-20441[578:52]",
+              "!doc": "This function is used to add a child Dataobject into the data object\n@param  childDataObject {@link kony.sdk.dto.DataObject}"
+            },
+            "setOdataUrl": {
+              "!type": "fn(odataUrl: ?)",
+              "!span": "20600[585:34]-20611[585:45]",
+              "!doc": "This function is used to set the odata url to query\n@param odataUrl"
+            },
+            "getOdataUrl": {
+              "!type": "fn()",
+              "!span": "20763[592:34]-20774[592:45]",
+              "!doc": "This function is used to get the odata url to query\n@returns {null}"
+            },
+            "setSelectQueryObject": {
+              "!type": "fn(selectQueryObject: ?)",
+              "!span": "20990[599:34]-21010[599:54]",
+              "!doc": "This function is used to set a SelectQueryObject {@link kony.sdk.dto.SelectQuery}\n@param selectQueryObject {@link kony.sdk.dto.SelectQuery}"
+            },
+            "getSelectQueryObject": {
+              "!type": "fn()",
+              "!span": "21245[606:34]-21265[606:54]",
+              "!doc": "This function is used to get a SelectQueryObject {@link kony.sdk.dto.SelectQuery}\n@returns selectQueryObject {@link kony.sdk.dto.SelectQuery}"
+            },
+            "getObjectName": {
+              "!type": "fn() -> !this.objectName",
+              "!span": "21415[613:34]-21428[613:47]",
+              "!doc": "This function is used to get the object name\n@returns objectName {string}"
+            }
+          },
+          "!type": "fn(objectName: ?, record: ?)",
+          "!span": "19263[540:13]-19273[540:23]",
+          "!doc": "An object used to perform CRUD operations on objects\n@param objectName\n@param record\n@constructor"
+        },
+        "PickList": {
+          "prototype": {
+            "setId": {
+              "!type": "fn(id: ?)",
+              "!span": "22089[635:32]-22094[635:37]"
+            },
+            "getId": {
+              "!type": "fn()",
+              "!span": "22149[637:32]-22154[637:37]"
+            },
+            "setActive": {
+              "!type": "fn(active: ?)",
+              "!span": "22207[639:32]-22216[639:41]"
+            },
+            "isActive": {
+              "!type": "fn()",
+              "!span": "22275[641:32]-22283[641:40]"
+            },
+            "setLabel": {
+              "!type": "fn(label: ?)",
+              "!span": "22336[643:32]-22344[643:40]"
+            },
+            "getLabel": {
+              "!type": "fn()",
+              "!span": "22402[645:32]-22410[645:40]"
+            },
+            "setValue": {
+              "!type": "fn(value: ?)",
+              "!span": "22463[647:32]-22471[647:40]"
+            },
+            "getValue": {
+              "!type": "fn()",
+              "!span": "22529[649:32]-22537[649:40]"
+            },
+            "setValidFor": {
+              "!type": "fn(validFor: ?)",
+              "!span": "22590[651:32]-22601[651:43]"
+            },
+            "getValidFor": {
+              "!type": "fn()",
+              "!span": "22662[653:32]-22673[653:43]"
+            },
+            "setDefaultValue": {
+              "!type": "fn(defaultValue: ?)",
+              "!span": "22726[655:32]-22741[655:47]"
+            },
+            "getDefaultValue": {
+              "!type": "fn()",
+              "!span": "22806[657:32]-22821[657:47]"
+            },
+            "setFieldMappingId": {
+              "!type": "fn(fieldMappingId: ?)",
+              "!span": "22874[659:32]-22891[659:49]"
+            },
+            "getFieldMappingId": {
+              "!type": "fn()",
+              "!span": "22958[661:32]-22975[661:49]"
+            }
+          },
+          "!type": "fn()",
+          "!span": "21679[625:13]-21687[625:21]",
+          "!doc": "This Object represent picklist values\n@constructor"
+        },
+        "ObjectMetadata": {
+          "!type": "fn()",
+          "!span": "23210[670:13]-23224[670:27]",
+          "!doc": "The structure of Object Metadata obtained from server\n@constructor"
+        },
+        "FieldMetadata": {
+          "!type": "fn()",
+          "!span": "24124[693:13]-24137[693:26]",
+          "!doc": "The structure of Field Metadata obtained from server\n@constructor"
+        },
+        "ObjectRelationship": {
+          "!type": "fn()",
+          "!span": "25379[723:13]-25397[723:31]",
+          "!doc": "The structure of Object Relationship in metadata obtained from server\n@constructor"
+        },
+        "SelectQuery": {
+          "prototype": {
+            "tables": {
+              "!type": "[?]",
+              "!span": "26390[747:35]-26396[747:41]"
+            },
+            "columnList": {
+              "!type": "[?]",
+              "!span": "26439[748:35]-26449[748:45]"
+            },
+            "criteriaList": {
+              "!type": "[?]",
+              "!span": "26492[749:35]-26504[749:47]"
+            },
+            "isDistinct": {
+              "!type": "bool",
+              "!span": "26547[750:35]-26557[750:45]"
+            },
+            "orderList": {
+              "!type": "[?]",
+              "!span": "26603[751:35]-26612[751:44]"
+            },
+            "joinList": {
+              "!type": "[?]",
+              "!span": "26655[752:35]-26663[752:43]"
+            },
+            "groupList": {
+              "!type": "[?]",
+              "!span": "26706[753:35]-26715[753:44]"
+            },
+            "setLimit": {
+              "!type": "fn(val: ?)",
+              "!span": "26986[762:35]-26994[762:43]",
+              "!doc": "This function is used to set Limit value\n@param val"
+            },
+            "setSkip": {
+              "!type": "fn(val: ?)",
+              "!span": "27125[769:35]-27132[769:42]",
+              "!doc": "This function is used to set Skip value\n@param val"
+            },
+            "getLimit": {
+              "!type": "fn() -> number",
+              "!span": "27282[776:35]-27290[776:43]",
+              "!doc": "This function is used to get the Limit Value\n@returns {integer} limit"
+            },
+            "getSkip": {
+              "!type": "fn() -> number",
+              "!span": "27435[783:35]-27442[783:42]",
+              "!doc": "This function is used to get the Skip Value\n@returns {integer} skip"
+            },
+            "addColumn": {
+              "!type": "fn(columnObj: ?) -> [?]",
+              "!span": "27652[791:35]-27661[791:44]",
+              "!doc": "This function is used to add a column object into the select query\n@param columnObj {@Link kony.sdk.dto.Column}\n@returns {Array}"
+            },
+            "addCriteria": {
+              "!type": "fn(criteriaObj: ?) -> [?]",
+              "!span": "27854[799:35]-27865[799:46]",
+              "!doc": "This function is used to add a criteria object to the select query\n@param criteriaObj\n@returns {Array}"
+            },
+            "addGroup": {
+              "!type": "fn(groupObj: ?)",
+              "!span": "28029[806:35]-28037[806:43]",
+              "!doc": "This function is used to add a group object to select query\n@param groupObj"
+            },
+            "addJoin": {
+              "!type": "fn(joinObj: ?)",
+              "!span": "28180[813:35]-28187[813:42]",
+              "!doc": "This function is used to add a join object\n@param joinObj"
+            },
+            "addOrder": {
+              "!type": "fn(orderObj: ?)",
+              "!span": "28347[820:35]-28355[820:43]",
+              "!doc": "This function is used to add order object to a select query\n@param orderObj"
+            },
+            "getTables": {
+              "!type": "fn() -> [?]",
+              "!span": "28519[827:35]-28528[827:44]",
+              "!doc": "This function is used to return tables in select query\n@returns {Array} Tables"
+            },
+            "getDistinct": {
+              "!type": "fn() -> bool",
+              "!span": "28669[834:35]-28680[834:46]",
+              "!doc": "This function is used to get isDistinct flag\n@returns {boolean}"
+            },
+            "getColumns": {
+              "!type": "fn() -> [?]",
+              "!span": "28838[841:35]-28848[841:45]",
+              "!doc": "This function is used to return columns in select query\n@returns {Array} Columns"
+            },
+            "getCriterias": {
+              "!type": "fn() -> [?]",
+              "!span": "29018[848:35]-29030[848:47]",
+              "!doc": "This function is used to get criteria objects in the select query\n@returns {Array} Criterias"
+            },
+            "getGroups": {
+              "!type": "fn() -> [?]",
+              "!span": "29201[855:35]-29210[855:44]",
+              "!doc": "This function is used to get the group objects in the select query\n@returns {Array} GroupObjs"
+            },
+            "getJoins": {
+              "!type": "fn() -> [?]",
+              "!span": "29376[862:35]-29384[862:43]",
+              "!doc": "This function is used to get the Join objects in the select query\n@returns {Array} Joins"
+            },
+            "getOrders": {
+              "!type": "fn() -> [?]",
+              "!span": "29555[869:35]-29564[869:44]",
+              "!doc": "This function is used to get the Order Objects in the select query\n@returns {Array} OrderObjs"
+            },
+            "removeColumn": {
+              "!type": "fn(columnObj: ?)",
+              "!span": "29751[876:35]-29763[876:47]",
+              "!doc": "This function is used to remove columnobject set in select query\n@param columnObj {@link kony.sdk.dto.Column}"
+            },
+            "removeCriteria": {
+              "!type": "fn(criteriaObj: ?)",
+              "!span": "29933[883:35]-29947[883:49]",
+              "!doc": "This function is used to remove criteriaObject from select query\n@param criteriaObj"
+            },
+            "removeGroup": {
+              "!type": "fn(groupObj: ?)",
+              "!span": "30111[890:35]-30122[890:46]",
+              "!doc": "This function is used to remove group set from select query\n@param groupObj"
+            },
+            "removeJoin": {
+              "!type": "fn(joinObj: ?)",
+              "!span": "30279[897:35]-30289[897:45]",
+              "!doc": "This function is used to remove Join set in select query\n@param joinObj"
+            },
+            "removeOrder": {
+              "!type": "fn(orderObj: ?)",
+              "!span": "30449[904:35]-30460[904:46]",
+              "!doc": "This function is used to remove OrderObj set in SelectQuery\n@param orderObj"
+            },
+            "setDistinct": {
+              "!type": "fn(isDistinct: ?)",
+              "!span": "30603[911:35]-30614[911:46]",
+              "!doc": "This function is used to set isDistinct\n@param isDistinct"
+            },
+            "toString": {
+              "!type": "fn() -> string",
+              "!span": "30789[918:35]-30797[918:43]",
+              "!doc": "This function is used to get the select query in the form of a string\n@returns {string}"
+            },
+            "appendListToQuery": {
+              "!type": "fn(objectList: ?, seperator: ?, mode: ?) -> string",
+              "!span": "30856[921:35]-30873[921:52]"
+            }
+          },
+          "!type": "fn(serviceName: ?, tableObj: ?)",
+          "!span": "26301[745:13]-26312[745:24]",
+          "!doc": "The Object used to define select query object, in order to fetch data\n@param serviceName\n@param tableObj {@link kony.sdk.dto.Table}\n@constructor"
+        },
+        "RecordObject": {
+          "prototype": {
+            "tableName": {
+              "!type": "string",
+              "!span": "31269[934:36]-31278[934:45]"
+            },
+            "childRecords": {
+              "!type": "[?]",
+              "!span": "31378[936:36]-31390[936:48]"
+            }
+          },
+          "!type": "fn()",
+          "!span": "31201[933:13]-31213[933:25]",
+          "!doc": "This object is used to define a record object used in Offline CRUD\n@constructor"
+        },
+        "Table": {
+          "prototype": {
+            "getAlias": {
+              "!type": "fn()",
+              "!span": "31917[956:29]-31925[956:37]"
+            },
+            "setAlias": {
+              "!type": "fn(alias: ?)",
+              "!span": "32047[963:29]-32055[963:37]",
+              "!doc": "This function is used to set alias.\n\n@param alias"
+            },
+            "getName": {
+              "!type": "fn()",
+              "!span": "32111[965:29]-32118[965:36]"
+            },
+            "setName": {
+              "!type": "fn(name: ?)",
+              "!span": "32238[972:29]-32245[972:36]",
+              "!doc": "This function is used to set name.\n\n@param name"
+            },
+            "equals": {
+              "!type": "fn(obj: ?)",
+              "!span": "32401[980:29]-32407[980:35]",
+              "!doc": "This function is used to check object equality.\n\n@param obj\n@return Boolean"
+            },
+            "getColumn": {
+              "!type": "fn(columnName: ?)",
+              "!span": "32463[983:29]-32472[983:38]"
+            },
+            "hasAlias": {
+              "!type": "fn()",
+              "!span": "32630[990:29]-32638[990:37]",
+              "!doc": "This function is used to check if alias is present or not.\n\n@return Boolean"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "32770[997:29]-32778[997:37]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            },
+            "isJunction": {
+              "!type": "fn()",
+              "!span": "32933[1004:29]-32943[1004:39]",
+              "!doc": "This function is used to return if the table is a junction table.\n\n@return boolean"
+            },
+            "setJunction": {
+              "!type": "fn(junctionType: ?)",
+              "!span": "33112[1011:29]-33123[1011:40]",
+              "!doc": "This function is used to set the type of table junction/non-junction table.\n\n@param junctionType"
+            }
+          },
+          "!type": "fn(tableName: ?, tableAlias: ?, junctionType: ?)",
+          "!span": "31664[949:13]-31669[949:18]",
+          "!doc": "This function is the Table constructor.\n@param tableName\n@param tableAlias\n@param junctionType\n@constructor"
+        },
+        "Column": {
+          "prototype": {
+            "getAggregation": {
+              "!type": "fn()",
+              "!span": "33596[1030:30]-33610[1030:44]"
+            },
+            "setAggregation": {
+              "!type": "fn(aggregation: ?)",
+              "!span": "33662[1032:30]-33676[1032:44]"
+            },
+            "getAlias": {
+              "!type": "fn()",
+              "!span": "33739[1034:30]-33747[1034:38]"
+            },
+            "setAlias": {
+              "!type": "fn(alias: ?)",
+              "!span": "33799[1036:30]-33807[1036:38]"
+            },
+            "getDataType": {
+              "!type": "fn()",
+              "!span": "33864[1038:30]-33875[1038:41]"
+            },
+            "setDataType": {
+              "!type": "fn(dataType: ?)",
+              "!span": "33927[1040:30]-33938[1040:41]"
+            },
+            "isComputedField": {
+              "!type": "fn()",
+              "!span": "33998[1042:30]-34013[1042:45]"
+            },
+            "setComputedField": {
+              "!type": "fn(fieldComputed: ?)",
+              "!span": "34065[1044:30]-34081[1044:46]"
+            },
+            "getName": {
+              "!type": "fn()",
+              "!span": "34146[1046:30]-34153[1046:37]"
+            },
+            "setName": {
+              "!type": "fn(name: ?)",
+              "!span": "34205[1048:30]-34212[1048:37]"
+            },
+            "getTable": {
+              "!type": "fn()",
+              "!span": "34268[1050:30]-34276[1050:38]"
+            },
+            "setTable": {
+              "!type": "fn(table: ?)",
+              "!span": "34328[1052:30]-34336[1052:38]"
+            },
+            "toStringByMode": {
+              "!type": "fn(mode: ?)",
+              "!span": "34393[1054:30]-34407[1054:44]"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "34463[1056:30]-34471[1056:38]"
+            },
+            "toStringByTablePrefix": {
+              "!type": "fn(includeTablePrefix: ?)",
+              "!span": "34525[1059:30]-34546[1059:51]"
+            }
+          },
+          "!type": "fn(tableObj: ?, colName: ?)",
+          "!span": "33419[1024:13]-33425[1024:19]",
+          "!doc": "This function is a Column constructor\n@param tableObj {@link kony.sdk.dto.Table}\n@param colName\n@constructor"
+        },
+        "Group": {
+          "prototype": {
+            "getColumn": {
+              "!type": "fn()",
+              "!span": "35037[1078:29]-35046[1078:38]"
+            },
+            "setColumn": {
+              "!type": "fn(column: ?)",
+              "!span": "35097[1080:29]-35106[1080:38]"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "35163[1082:29]-35171[1082:37]"
+            }
+          },
+          "!type": "fn(columnObj: ?)",
+          "!span": "34970[1075:13]-34975[1075:18]",
+          "!doc": "This Object represents a groupby clause in select query\n@param columnObj {@link kony.sdk.dto.Column}\n@constructor"
+        },
+        "Join": {
+          "prototype": {
+            "getCriteria": {
+              "!type": "fn()",
+              "!span": "35596[1098:28]-35607[1098:39]"
+            },
+            "setCriteria": {
+              "!type": "fn(criteria: ?)",
+              "!span": "35659[1101:28]-35670[1101:39]"
+            },
+            "getTable": {
+              "!type": "fn()",
+              "!span": "35730[1104:28]-35738[1104:36]"
+            },
+            "setTable": {
+              "!type": "fn(table: ?)",
+              "!span": "35790[1107:28]-35798[1107:36]"
+            },
+            "getJoinType": {
+              "!type": "fn()",
+              "!span": "35855[1110:28]-35866[1110:39]"
+            },
+            "setJoinType": {
+              "!type": "fn(joinType: ?)",
+              "!span": "35918[1113:28]-35929[1113:39]"
+            },
+            "initCriteria": {
+              "!type": "fn(srcColumn: ?, destColumn: ?)",
+              "!span": "35989[1116:28]-36001[1116:40]"
+            },
+            "toString": {
+              "!type": "fn() -> string",
+              "!span": "36074[1119:28]-36082[1119:36]"
+            }
+          },
+          "!type": "fn()",
+          "!span": "35422[1092:13]-35426[1092:17]",
+          "!doc": "This Object represents JOINS used in kony.sdk.dto.SelectQuery\n@constructor"
+        },
+        "Order": {
+          "prototype": {
+            "getColumn": {
+              "!type": "fn() -> !this.column",
+              "!span": "36548[1137:29]-36557[1137:38]"
+            },
+            "setColumn": {
+              "!type": "fn(column: ?)",
+              "!span": "36708[1146:29]-36717[1146:38]",
+              "!doc": "This function is used to set column.\n\n@param column"
+            },
+            "getType": {
+              "!type": "fn()",
+              "!span": "36776[1149:29]-36783[1149:36]"
+            },
+            "setType": {
+              "!type": "fn(type: ?)",
+              "!span": "36905[1157:29]-36912[1157:36]",
+              "!doc": "This function is used to set type.\n\n@param type"
+            },
+            "toString": {
+              "!type": "fn() -> string",
+              "!span": "37050[1165:29]-37058[1165:37]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            }
+          },
+          "!type": "fn(columnObj: ?, orderTypeObj: ?)",
+          "!span": "36355[1131:13]-36360[1131:18]",
+          "!doc": "This function is the Order constructor.\n@param columnObj\n@param orderTypeObj"
+        },
+        "Between": {
+          "prototype": {
+            "quote": {
+              "!type": "fn(str: ?)",
+              "!span": "37476[1182:31]-37481[1182:36]"
+            },
+            "setColumn": {
+              "!type": "fn(column: ?)",
+              "!span": "37539[1185:31]-37548[1185:40]"
+            },
+            "setRange": {
+              "!type": "fn(range: ?)",
+              "!span": "37609[1188:31]-37617[1188:39]"
+            },
+            "getColumn": {
+              "!type": "fn()",
+              "!span": "37675[1190:31]-37684[1190:40]"
+            },
+            "getRange": {
+              "!type": "fn()",
+              "!span": "37737[1192:31]-37745[1192:39]"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "37798[1194:31]-37806[1194:39]"
+            }
+          },
+          "!type": "fn(columnObj: ?, colRange: ?)",
+          "!span": "37393[1178:13]-37400[1178:20]",
+          "!doc": "This function is used to check the range of values of columnObj\n@param columnObj {@link kony.sdk.dto.Column}\n@param colRange\n@constructor"
+        },
+        "DateRange": {
+          "prototype": {
+            "getEnd": {
+              "!type": "fn()",
+              "!span": "38124[1208:33]-38130[1208:39]"
+            },
+            "setEnd": {
+              "!type": "fn(end: ?)",
+              "!span": "38260[1216:33]-38266[1216:39]",
+              "!doc": "This function is used to set End value.\n\n@param end"
+            },
+            "getStart": {
+              "!type": "fn()",
+              "!span": "38326[1219:33]-38334[1219:41]"
+            },
+            "setStart": {
+              "!type": "fn(start: ?)",
+              "!span": "38468[1227:33]-38476[1227:41]",
+              "!doc": "This function is used to set start value.\n\n@param start"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "38619[1235:33]-38627[1235:41]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            }
+          },
+          "!type": "fn()",
+          "!span": "38058[1205:13]-38067[1205:22]",
+          "!doc": "This function is the DateRange constructor.\n@param startDate\n@param endDate"
+        },
+        "DecimalRange": {
+          "prototype": {
+            "getEnd": {
+              "!type": "fn()",
+              "!span": "38980[1250:36]-38986[1250:42]"
+            },
+            "setEnd": {
+              "!type": "fn(end: ?)",
+              "!span": "39119[1258:36]-39125[1258:42]",
+              "!doc": "This function is used to set End value.\n\n@param end"
+            },
+            "getStart": {
+              "!type": "fn()",
+              "!span": "39190[1262:36]-39198[1262:44]"
+            },
+            "setStart": {
+              "!type": "fn(start: ?)",
+              "!span": "39335[1270:36]-39343[1270:44]",
+              "!doc": "This function is used to set start value.\n\n@param start"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "39489[1278:36]-39497[1278:44]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            }
+          },
+          "!type": "fn(startDecimal: ?, endDecimal: ?)",
+          "!span": "38882[1246:13]-38894[1246:25]",
+          "!doc": "This function is the DecimalRange constructor.\n@param startDecimal\n@param endDecimal"
+        },
+        "FloatRange": {
+          "prototype": {
+            "getEnd": {
+              "!type": "fn()",
+              "!span": "39840[1291:34]-39846[1291:40]"
+            },
+            "setEnd": {
+              "!type": "fn(end: ?)",
+              "!span": "39977[1299:34]-39983[1299:40]",
+              "!doc": "This function is used to set End value.\n\n@param end"
+            },
+            "getStart": {
+              "!type": "fn()",
+              "!span": "40044[1302:34]-40052[1302:42]"
+            },
+            "setStart": {
+              "!type": "fn(start: ?)",
+              "!span": "40187[1310:34]-40195[1310:42]",
+              "!doc": "This function is used to set start value.\n\n@param start"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "40339[1318:34]-40347[1318:42]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            }
+          },
+          "!type": "fn(startFloat: ?, endFloat: ?)",
+          "!span": "39754[1289:13]-39764[1289:23]",
+          "!doc": "This function is the FloatRange constructor.\n@param startFloat\n@param endFloat"
+        },
+        "IntegerRange": {
+          "prototype": {
+            "getEnd": {
+              "!type": "fn()",
+              "!span": "40678[1333:36]-40684[1333:42]"
+            },
+            "setEnd": {
+              "!type": "fn(end: ?)",
+              "!span": "40817[1341:36]-40823[1341:42]",
+              "!doc": "This function is used to set End value.\n\n@param end"
+            },
+            "getStart": {
+              "!type": "fn()",
+              "!span": "40886[1344:36]-40894[1344:44]"
+            },
+            "setStart": {
+              "!type": "fn(start: ?)",
+              "!span": "41031[1352:36]-41039[1352:44]",
+              "!doc": "This function is used to set start value.\n\n@param start"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "41185[1360:36]-41193[1360:44]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            }
+          },
+          "!type": "fn(startInt: ?, endInt: ?)",
+          "!span": "40588[1329:13]-40600[1329:25]",
+          "!doc": "This function is the IntegerRange constructor.\n@param startInt\n@param endInt"
+        },
+        "StringRange": {
+          "prototype": {
+            "getEnd": {
+              "!type": "fn()",
+              "!span": "41534[1374:35]-41540[1374:41]"
+            },
+            "setEnd": {
+              "!type": "fn(end: ?)",
+              "!span": "41672[1382:35]-41678[1382:41]",
+              "!doc": "This function is used to set End value.\n\n@param end"
+            },
+            "getStart": {
+              "!type": "fn()",
+              "!span": "41740[1385:35]-41748[1385:43]"
+            },
+            "setStart": {
+              "!type": "fn(start: ?)",
+              "!span": "41884[1393:35]-41892[1393:43]",
+              "!doc": "This function is used to set start value.\n\n@param start"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "42037[1401:35]-42045[1401:43]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            }
+          },
+          "!type": "fn(startString: ?, endString: ?)",
+          "!span": "41442[1371:13]-41453[1371:24]",
+          "!doc": "This function is the StringRange constructor.\n@param startString\n@param endString"
+        },
+        "LogicGroup": {
+          "prototype": {
+            "initializeLogicGroup": {
+              "!type": "fn(operator: ?, left: ?, right: ?)",
+              "!span": "42609[1423:34]-42629[1423:54]",
+              "!doc": "This function is used to initialize LogicGroup.\n\n@param operator\n@param left\n@param right"
+            },
+            "getLeft": {
+              "!type": "fn()",
+              "!span": "42708[1426:34]-42715[1426:41]"
+            },
+            "setLeft": {
+              "!type": "fn(val: ?)",
+              "!span": "42841[1434:34]-42848[1434:41]",
+              "!doc": "This function is used to set left.\n\n@param val"
+            },
+            "getOperator": {
+              "!type": "fn()",
+              "!span": "42907[1436:34]-42918[1436:45]"
+            },
+            "setOperator": {
+              "!type": "fn(val: ?)",
+              "!span": "43048[1444:34]-43059[1444:45]",
+              "!doc": "This function is used to set Operator.\n\n@param val"
+            },
+            "getRight": {
+              "!type": "fn()",
+              "!span": "43118[1446:34]-43126[1446:42]"
+            },
+            "setRight": {
+              "!type": "fn(val: ?)",
+              "!span": "43253[1454:34]-43261[1454:42]",
+              "!doc": "This function is used to set Right.\n\n@param val"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "43403[1462:34]-43411[1462:42]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            }
+          },
+          "!type": "fn(operatorLg: ?, leftOp: ?, rightOp: ?)",
+          "!span": "42397[1414:13]-42407[1414:23]",
+          "!doc": "This function helps in preparing And {@link kony.sdk.dto.And} and Or {@Link kony.sdk.dto.Or} clauses\n@param operatorLg\n@param leftOp\n@param rightOp\n@constructor"
+        },
+        "And": {
+          "prototype": {
+            "initializeAnd": {
+              "!type": "fn(left: ?, right: ?)",
+              "!span": "43716[1478:27]-43729[1478:40]"
+            }
+          },
+          "!type": "fn(left: ?, right: ?)",
+          "!span": "43649[1474:13]-43652[1474:16]",
+          "!doc": "This function is the And constructor.\n\n@param left\n@param right"
+        },
+        "Or": {
+          "prototype": {
+            "initializeOr": {
+              "!type": "fn(left: ?, right: ?)",
+              "!span": "44047[1494:26]-44059[1494:38]"
+            }
+          },
+          "!type": "fn(left: ?, right: ?)",
+          "!span": "43984[1491:13]-43986[1491:15]",
+          "!doc": "This function is the Or constructor.\n\n@param left\n@param right"
+        },
+        "Not": {
+          "prototype": {
+            "initializeNot": {
+              "!type": "fn(right: ?)",
+              "!span": "44342[1509:27]-44355[1509:40]"
+            }
+          },
+          "!type": "fn(right: ?)",
+          "!span": "44283[1506:13]-44286[1506:16]",
+          "!doc": "This function is the Not constructor.\n\n@param right"
+        },
+        "Expression": {
+          "prototype": {
+            "getTerm": {
+              "!type": "fn()",
+              "!span": "44794[1525:34]-44801[1525:41]"
+            },
+            "getOperator": {
+              "!type": "fn()",
+              "!span": "44857[1527:34]-44868[1527:45]"
+            },
+            "getExpression": {
+              "!type": "fn()",
+              "!span": "44924[1529:34]-44937[1529:47]"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "44993[1531:34]-45001[1531:42]"
+            }
+          },
+          "!type": "fn()",
+          "!span": "44593[1519:13]-44603[1519:23]",
+          "!doc": "This function is a constructor for Expression Object\n@constructor"
+        },
+        "InCriteria": {
+          "prototype": {
+            "getColumnForTable": {
+              "!type": "fn(table: ?, columnName: ?)",
+              "!span": "45381[1545:34]-45398[1545:51]"
+            },
+            "getColumn": {
+              "!type": "fn()",
+              "!span": "45473[1548:34]-45482[1548:43]"
+            },
+            "setColumn": {
+              "!type": "fn(column: ?)",
+              "!span": "45540[1551:34]-45549[1551:43]"
+            },
+            "setValues": {
+              "!type": "fn(valuesCollection: ?)",
+              "!span": "45613[1554:34]-45622[1554:43]"
+            },
+            "getValues": {
+              "!type": "fn()",
+              "!span": "45696[1557:34]-45705[1557:43]"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "45763[1560:34]-45771[1560:42]"
+            }
+          },
+          "!type": "fn()",
+          "!span": "45227[1540:13]-45237[1540:23]",
+          "!doc": "This function is a constructor for InCriteria Object\n@constructor"
+        },
+        "Exists": {
+          "prototype": {
+            "getSubSelect": {
+              "!type": "fn()",
+              "!span": "46145[1574:30]-46157[1574:42]"
+            },
+            "setSubSelect": {
+              "!type": "fn(subSelect: ?)",
+              "!span": "46209[1576:30]-46221[1576:42]"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "46282[1578:30]-46290[1578:38]"
+            }
+          },
+          "!type": "fn(subSelectQuery: ?)",
+          "!span": "46071[1571:13]-46077[1571:19]",
+          "!doc": "This function is used to in set Exists param in select query\n@param subSelectQuery {@link kony.sdk.dto.SelectQuery}\n@constructor"
+        },
+        "Criteria": {
+          "prototype": {
+            "quote": {
+              "!type": "fn(str: ?)",
+              "!span": "46571[1591:32]-46576[1591:37]"
+            }
+          },
+          "!type": "fn()",
+          "!span": "46509[1589:13]-46517[1589:21]",
+          "!doc": "This is Interface to define where clauses\n@constructor"
+        },
+        "Match": {
+          "prototype": {
+            "getColumn": {
+              "!type": "fn()",
+              "!span": "46976[1607:29]-46985[1607:38]"
+            },
+            "getMatchType": {
+              "!type": "fn()",
+              "!span": "47038[1610:29]-47050[1610:41]"
+            },
+            "setMatchType": {
+              "!type": "fn(matchType: ?)",
+              "!span": "47183[1618:29]-47195[1618:41]",
+              "!doc": "This function is used to set match type.\n\n@param matchType"
+            },
+            "getValue": {
+              "!type": "fn()",
+              "!span": "47257[1621:29]-47265[1621:37]"
+            },
+            "toString": {
+              "!type": "fn()",
+              "!span": "47399[1629:29]-47407[1629:37]",
+              "!doc": "This function is used to convert to String.\n\n@return string"
+            }
+          },
+          "!type": "fn()",
+          "!span": "46802[1601:13]-46807[1601:18]",
+          "!doc": "This function is used to define where clause\n@constructor"
+        },
+        "!span": "18973[529:9]-18976[529:12]"
+      },
+      "verifyAndCallClosure": {
+        "!type": "fn(closure: ?, params: ?)",
+        "!span": "47667[1641:9]-47687[1641:29]"
+      },
+      "KNYObj": {
+        "prototype": {
+          "getSdkObjectSync": {
+            "!type": "fn()",
+            "!span": "47956[1651:26]-47972[1651:42]"
+          },
+          "startSync": {
+            "!type": "fn(syncConfig: ?, successCallback: ?, failureCallback: ?, progressCallback: ?)",
+            "!span": "48020[1654:26]-48029[1654:35]"
+          },
+          "create": {
+            "!type": "fn(record: ?, options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "48139[1657:26]-48145[1657:32]"
+          },
+          "updateByPK": {
+            "!type": "fn(record: ?, options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "48242[1660:26]-48252[1660:36]"
+          },
+          "deleteByPK": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "48349[1663:26]-48359[1663:36]"
+          },
+          "get": {
+            "!type": "fn(options: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "48448[1666:26]-48451[1666:29]"
+          },
+          "rollback": {
+            "!type": "fn(primaryKeyValueMap: ?, successCallback: ?, failureCallback: ?)",
+            "!span": "48540[1669:26]-48548[1669:34]"
+          }
+        },
+        "createSDKObjectSync": {
+          "!type": "fn(name: ?)",
+          "!span": "55149[1927:16]-55168[1927:35]"
+        },
+        "startSync": {
+          "!type": "fn(knyObj: ?, syncConfig: ?, successCallback: ?, failureCallback: ?, progressCallback: ?)",
+          "!span": "55211[1930:16]-55220[1930:25]"
+        },
+        "create": {
+          "!type": "fn(knyObj: ?, record: ?, options: ?, successCallback: ?, failureCallback: ?)",
+          "!span": "55329[1933:16]-55335[1933:22]"
+        },
+        "updateByPK": {
+          "!type": "fn(knyObj: ?, record: ?, options: ?, successCallback: ?, failureCallback: ?)",
+          "!span": "55431[1936:16]-55441[1936:26]"
+        },
+        "deleteByPK": {
+          "!type": "fn(knyObj: ?, options: ?, successCallback: ?, failureCallback: ?)",
+          "!span": "55537[1939:16]-55547[1939:26]"
+        },
+        "get": {
+          "!type": "fn(knyObj: ?, options: ?, successCallback: ?, failureCallback: ?)",
+          "!span": "55635[1942:16]-55638[1942:19]"
+        },
+        "rollback": {
+          "!type": "fn(knyObj: ?, primaryKeyValueMap: ?, successCallback: ?, failureCallback: ?)",
+          "!span": "55726[1945:16]-55734[1945:24]"
+        },
+        "!type": "fn(name: ?)",
+        "!span": "47857[1647:9]-47863[1647:15]",
+        "!doc": "==================================================================================================================="
+      },
+      "KNYObjSvc": {
+        "prototype": {
+          "getSdkObjectServiceSync": {
+            "!type": "fn()",
+            "!span": "48866[1679:29]-48889[1679:52]"
+          },
+          "getSdkObjectByName": {
+            "!type": "fn(name: ?)",
+            "!span": "48940[1682:29]-48958[1682:47]"
+          },
+          "startSync": {
+            "!type": "fn(syncConfig: ?, successCallback: ?, failureCallback: ?, progressCallback: ?)",
+            "!span": "49013[1685:29]-49022[1685:38]"
+          },
+          "rollback": {
+            "!type": "fn(successCallback: ?, failureCallback: ?)",
+            "!span": "49135[1688:29]-49143[1688:37]"
+          }
+        },
+        "createSDKObjectServiceSync": {
+          "!type": "fn(name: ?)",
+          "!span": "55836[1948:19]-55862[1948:45]"
+        },
+        "startSync": {
+          "!type": "fn(knyObjSvc: ?, syncConfig: ?, successCallback: ?, failureCallback: ?, progressCallback: ?)",
+          "!span": "55908[1951:19]-55917[1951:28]"
+        },
+        "rollback": {
+          "!type": "fn(knyObjSvc: ?, successCallback: ?, failureCallback: ?)",
+          "!span": "56032[1954:19]-56040[1954:27]"
+        },
+        "!type": "fn(name: ?)",
+        "!span": "48758[1675:9]-48767[1675:18]",
+        "!doc": "======================================================================================================================="
+      },
+      "OfflineObjects": {
+        "prototype": {
+          "setup": {
+            "!type": "fn(successCallback: ?, failureCallback: ?)",
+            "!span": "53548[1874:34]-53553[1874:39]"
+          },
+          "drop": {
+            "!type": "fn(successCallback: ?, failureCallback: ?)",
+            "!span": "53642[1877:34]-53646[1877:38]"
+          },
+          "reset": {
+            "!type": "fn(successCallback: ?, failureCallback: ?)",
+            "!span": "53735[1880:34]-53740[1880:39]"
+          },
+          "rollback": {
+            "!type": "fn(successCallback: ?, failureCallback: ?)",
+            "!span": "53829[1883:34]-53837[1883:42]"
+          }
+        },
+        "setToken": {
+          "!type": "fn(token: ?)",
+          "!span": "54241[1897:24]-54249[1897:32]",
+          "!doc": "=================================================================================================================="
+        },
+        "setReportingParams": {
+          "!type": "fn(reportingParams: ?)",
+          "!span": "54301[1900:24]-54319[1900:42]"
+        },
+        "createSyncCallback": {
+          "!type": "fn(successLog: ?, successCallback: ?, failureLog: ?, failureCallback: ?)",
+          "!span": "54381[1903:24]-54399[1903:42]"
+        },
+        "createKonySyncProgressCallback": {
+          "!type": "fn(progressLog: ?, progressCallback: ?)",
+          "!span": "54502[1906:24]-54532[1906:54]"
+        },
+        "createHashMapFromJSONObject": {
+          "!type": "fn(json: ?, logPrefix: ?)",
+          "!span": "54608[1909:24]-54635[1909:51]"
+        },
+        "createJSONObjectFromHashMap": {
+          "!type": "fn(hashMap: ?, logPrefix: ?)",
+          "!span": "54697[1912:24]-54724[1912:51]"
+        },
+        "setup": {
+          "!type": "fn(objServiceList: ?, successCallback: ?, failureCallback: ?)",
+          "!span": "54789[1915:24]-54794[1915:29]"
+        },
+        "reset": {
+          "!type": "fn(objServiceList: ?, successCallback: ?, failureCallback: ?)",
+          "!span": "54889[1918:24]-54894[1918:29]"
+        },
+        "drop": {
+          "!type": "fn(successCallback: ?, failureCallback: ?)",
+          "!span": "54989[1921:24]-54993[1921:28]"
+        },
+        "rollback": {
+          "!type": "fn(successCallback: ?, failureCallback: ?)",
+          "!span": "55071[1924:24]-55079[1924:32]"
+        },
+        "!type": "fn(objServiceList: ?)",
+        "!span": "53465[1872:9]-53479[1872:23]",
+        "!doc": "==================================================================================================================="
+      },
+      "metric": {
+        "eventConfig": {
+          "confType": {
+            "!type": "string",
+            "!span": "56339[1965:1]-56349[1965:11]"
+          },
+          "!span": "56321[1964:16]-56332[1964:27]"
+        },
+        "eventTypeMap": {
+          "formentry": {
+            "!type": "string",
+            "!span": "56539[1970:4]-56550[1970:15]"
+          },
+          "formexit": {
+            "!type": "string",
+            "!span": "56570[1971:4]-56580[1971:14]"
+          },
+          "touch": {
+            "!type": "string",
+            "!span": "56599[1972:4]-56606[1972:11]"
+          },
+          "servicerequest": {
+            "!type": "string",
+            "!span": "56622[1973:4]-56638[1973:20]"
+          },
+          "serviceresponse": {
+            "!type": "string",
+            "!span": "56663[1974:4]-56680[1974:21]"
+          },
+          "gesture": {
+            "!type": "string",
+            "!span": "56706[1975:4]-56715[1975:13]"
+          },
+          "orientation": {
+            "!type": "string",
+            "!span": "56733[1976:4]-56746[1976:17]"
+          },
+          "error": {
+            "!type": "string",
+            "!span": "56768[1977:4]-56775[1977:11]"
+          },
+          "exception": {
+            "!type": "string",
+            "!span": "56791[1978:4]-56802[1978:15]"
+          },
+          "crash": {
+            "!type": "string",
+            "!span": "56822[1979:4]-56829[1979:11]"
+          },
+          "custom": {
+            "!type": "string",
+            "!span": "56845[1980:4]-56853[1980:12]"
+          },
+          "servicecall": {
+            "!type": "string",
+            "!span": "56870[1981:4]-56883[1981:17]"
+          },
+          "apptransition": {
+            "!type": "string",
+            "!span": "56905[1982:4]-56920[1982:19]"
+          },
+          "appload": {
+            "!type": "string",
+            "!span": "56944[1983:4]-56953[1983:13]"
+          },
+          "component": {
+            "!type": "string",
+            "!span": "56971[1984:4]-56982[1984:15]"
+          },
+          "!span": "56517[1969:16]-56529[1969:28]"
+        },
+        "errorCodeMap": {
+          "<i>": {
+            "!type": "bool",
+            "!span": "57036[1987:1]-57042[1987:7]"
+          },
+          "!span": "57017[1986:16]-57029[1986:28]"
+        },
+        "!span": "56286[1961:10]-56292[1961:16]"
+      },
+      "!type": "fn()",
+      "!span": "184[10:5]-187[10:8]",
+      "!doc": "Constructor for creating the kony client instance.\n@class\n@classdesc kony Class\n@memberof kony"
+    },
+    "logger": {
+      "appLoggerInitialisation": {
+        "!type": "fn() -> ?",
+        "!span": "49339[1695:1]-49362[1695:24]"
+      },
+      "networkPersistorUrlEndpoint": {
+        "!type": "string",
+        "!span": "49527[1700:4]-49554[1700:31]"
+      },
+      "deviceLogLevelHeader": {
+        "!type": "string",
+        "!span": "49576[1701:4]-49596[1701:24]"
+      },
+      "isNativeLoggerAvailable": {
+        "!type": "fn() -> bool",
+        "!span": "49631[1702:4]-49654[1702:27]"
+      },
+      "logLevel": {
+        "NONE": {
+          "value": {
+            "!type": "number",
+            "!span": "49814[1710:10]-49819[1710:15]"
+          },
+          "name": {
+            "!type": "string",
+            "!span": "49837[1711:10]-49841[1711:14]"
+          },
+          "code": {
+            "!type": "string",
+            "!span": "49863[1712:10]-49867[1712:14]"
+          },
+          "!span": "49794[1709:8]-49798[1709:12]"
+        },
+        "FATAL": {
+          "value": {
+            "!type": "number",
+            "!span": "49915[1715:10]-49920[1715:15]"
+          },
+          "name": {
+            "!type": "string",
+            "!span": "49938[1716:10]-49942[1716:14]"
+          },
+          "code": {
+            "!type": "string",
+            "!span": "49965[1717:10]-49969[1717:14]"
+          },
+          "!span": "49894[1714:6]-49899[1714:11]"
+        },
+        "ERROR": {
+          "value": {
+            "!type": "number",
+            "!span": "50018[1720:10]-50023[1720:15]"
+          },
+          "name": {
+            "!type": "string",
+            "!span": "50041[1721:10]-50045[1721:14]"
+          },
+          "code": {
+            "!type": "string",
+            "!span": "50068[1722:10]-50072[1722:14]"
+          },
+          "!span": "49997[1719:6]-50002[1719:11]"
+        },
+        "WARN": {
+          "value": {
+            "!type": "number",
+            "!span": "50120[1725:10]-50125[1725:15]"
+          },
+          "name": {
+            "!type": "string",
+            "!span": "50142[1726:10]-50146[1726:14]"
+          },
+          "code": {
+            "!type": "string",
+            "!span": "50168[1727:10]-50172[1727:14]"
+          },
+          "!span": "50100[1724:6]-50104[1724:10]"
+        },
+        "INFO": {
+          "value": {
+            "!type": "number",
+            "!span": "50219[1730:10]-50224[1730:15]"
+          },
+          "name": {
+            "!type": "string",
+            "!span": "50240[1731:10]-50244[1731:14]"
+          },
+          "code": {
+            "!type": "string",
+            "!span": "50266[1732:10]-50270[1732:14]"
+          },
+          "!span": "50199[1729:6]-50203[1729:10]"
+        },
+        "DEBUG": {
+          "value": {
+            "!type": "number",
+            "!span": "50318[1735:10]-50323[1735:15]"
+          },
+          "name": {
+            "!type": "string",
+            "!span": "50340[1736:10]-50344[1736:14]"
+          },
+          "code": {
+            "!type": "string",
+            "!span": "50367[1737:10]-50371[1737:14]"
+          },
+          "!span": "50297[1734:6]-50302[1734:11]"
+        },
+        "TRACE": {
+          "value": {
+            "!type": "number",
+            "!span": "50420[1740:10]-50425[1740:15]"
+          },
+          "name": {
+            "!type": "string",
+            "!span": "50442[1741:10]-50446[1741:14]"
+          },
+          "code": {
+            "!type": "string",
+            "!span": "50469[1742:10]-50473[1742:14]"
+          },
+          "!span": "50399[1739:6]-50404[1739:11]"
+        },
+        "ALL": {
+          "value": {
+            "!type": "number",
+            "!span": "50520[1745:10]-50525[1745:15]"
+          },
+          "name": {
+            "!type": "string",
+            "!span": "50542[1746:10]-50546[1746:14]"
+          },
+          "code": {
+            "!type": "string",
+            "!span": "50567[1747:10]-50571[1747:14]"
+          },
+          "!span": "50501[1744:6]-50504[1744:9]"
+        },
+        "!span": "49772[1708:4]-49780[1708:12]"
+      },
+      "setClaimsToken": {
+        "!type": "fn()",
+        "!span": "50642[1752:3]-50656[1752:17]",
+        "!doc": "setting claims token after referesh"
+      },
+      "flush": {
+        "!type": "fn()",
+        "!span": "51082[1769:3]-51087[1769:8]"
+      },
+      "filePersistor": {
+        "!type": "number",
+        "!span": "51194[1774:7]-51207[1774:20]"
+      },
+      "consolePersistor": {
+        "!type": "number",
+        "!span": "51243[1778:7]-51259[1778:23]"
+      },
+      "networkPersistor": {
+        "!type": "number",
+        "!span": "51295[1782:7]-51311[1782:23]"
+      },
+      "activatePersistors": {
+        "!type": "fn(activatedList: ?)",
+        "!span": "51343[1786:3]-51361[1786:21]"
+      },
+      "deactivatePersistors": {
+        "!type": "fn(deactivatedList: ?)",
+        "!span": "51500[1791:3]-51520[1791:23]"
+      },
+      "setConfig": {
+        "!type": "fn(loggerConfig: ?)",
+        "!span": "51667[1797:3]-51676[1797:12]"
+      },
+      "setPersistorConfig": {
+        "!type": "fn(persistor: ?)",
+        "!span": "51851[1805:3]-51869[1805:21]"
+      },
+      "createLoggerConfig": {
+        "!type": "fn()",
+        "!span": "52054[1813:3]-52072[1813:21]"
+      },
+      "!span": "49326[1694:5]-49332[1694:11]",
+      "!doc": "===================================================================================================================="
+    },
+    "!span": "41[1:4]-45[1:8]",
+    "mbaas": "kony.sdk"
+  }
+}

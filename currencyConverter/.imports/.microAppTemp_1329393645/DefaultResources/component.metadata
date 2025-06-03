@@ -1,0 +1,59 @@
+{
+    "exportType": "microApp",
+    "info": {
+        "actions": {},
+        "cordova": [],
+        "fonts": [],
+        "forms": {},
+        "images": [],
+        "isMVC": false,
+        "localFiles": [],
+        "nativeApis": 0,
+        "projectCategory": "app",
+        "skins": [
+            "sknLblDescription",
+            "sknLblRowHeading",
+            "sknLblStrip",
+            "sknLblTimeStamp",
+            "sknSampleRowTemplate",
+            "sknSampleSectionHeaderTemplate",
+            "sknSectionHeaderLabelSkin",
+            "slForm"
+        ],
+        "templates": [
+            [
+                "desktop",
+                "segments",
+                "SampleRowTemplate"
+            ],
+            [
+                "desktop",
+                "segments",
+                "SampleSectionHeaderTemplate"
+            ],
+            [
+                "mobile",
+                "segments",
+                "SampleRowTemplate"
+            ],
+            [
+                "mobile",
+                "segments",
+                "SampleSectionHeaderTemplate"
+            ],
+            [
+                "tablet",
+                "segments",
+                "SampleRowTemplate"
+            ],
+            [
+                "tablet",
+                "segments",
+                "SampleSectionHeaderTemplate"
+            ]
+        ],
+        "type": "microApp",
+        "userwidgets": []
+    },
+    "project_version": "sprint32"
+}
